@@ -2,6 +2,7 @@ import {
     Avatar,
     Box,
     Button,
+    ButtonGroup,
     Fab,
     Modal,
     Stack,
@@ -16,6 +17,7 @@ import {
     Image,
     VideoCameraBack,
     PersonAdd,
+    DateRange,
 } from "@mui/icons-material";
 import { useState } from "react";
 
@@ -46,11 +48,11 @@ const Add = (props) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box
-                    bgcolor="white"
-                    height={280}
                     width={400}
                     p={3}
                     borderRadius={5}
+                    bgcolor={"background.default"}
+                    color={"text.primary"}
                 >
                     <Typography variant="h6" color="gray" textAlign="center">
                         Create post
@@ -74,11 +76,21 @@ const Add = (props) => {
                     />
 
                     <Stack direction="row" gap={1} mt={2} mb={3}>
-                        <EmojiEmotions />
-                        <Image />
-                        <PersonAdd />
-                        <VideoCameraBack />
+                        <EmojiEmotions color="primary" />
+                        <Image color="secondary" />
+                        <PersonAdd color="success" />
+                        <VideoCameraBack color="error" />
                     </Stack>
+                    <ButtonGroup
+                        variant="contained"
+                        aria-label="outlined primary button group"
+                        fullWidth
+                    >
+                        <Button>Post</Button>
+                        <Button sx={{ width: 100 }}>
+                            <DateRange />
+                        </Button>
+                    </ButtonGroup>
                 </Box>
             </StyledModal>
         </>

@@ -16,7 +16,7 @@ import {
     ModeNight,
 } from "@mui/icons-material";
 
-const SideBar = (props) => {
+const SideBar = ({ setMode }) => {
     return (
         <Box
             flex={1}
@@ -72,7 +72,13 @@ const SideBar = (props) => {
                             <ListItemIcon>
                                 <ModeNight />
                             </ListItemIcon>
-                            <Switch />
+                            <Switch
+                                onClick={() =>
+                                    setMode((previous) =>
+                                        previous === "light" ? "dark" : "light"
+                                    )
+                                }
+                            />
                             {/* <Switch {...label} defaultChecked /> */}
                             {/* <Switch {...label} disabled defaultChecked /> */}
                             {/* <Switch {...label} disabled /> */}

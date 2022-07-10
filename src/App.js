@@ -1,15 +1,26 @@
-import { Button } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import Add from "./components/Add";
+import Feed from "./components/Feed";
+import Navbar from "./components/Navbar";
+import RightBar from "./components/RightBar";
+import SideBar from "./components/SideBar";
 
 function App() {
     return (
         <div className="App">
-            <Button variant="text">Text</Button>
-            <Button variant="contained" color="secondary" size="small">
-                Contained
-            </Button>
-            <Button variant="outlined" disabled>
-                Outlined
-            </Button>
+            <Box>
+                <Navbar />
+                <Stack
+                    direction="row"
+                    spacing={2}
+                    justifyContent="space-between"
+                >
+                    <SideBar />
+                    <Feed />
+                    <RightBar />
+                </Stack>
+                <Add />
+            </Box>
         </div>
     );
 }
